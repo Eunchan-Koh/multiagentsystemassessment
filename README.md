@@ -1,3 +1,5 @@
+
+<video src="https://github.com/user-attachments/assets/4162fd29-53e3-4f99-b598-364236411c2e"></video>
 ## project setup
 1. run installation.py once in the beginning.
 2. installation.py does not include automated library installations. That should be done separately - I'll include requirements.txt later if possible.
