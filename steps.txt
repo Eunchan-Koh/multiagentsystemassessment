@@ -1,0 +1,27 @@
+1. create sample db using PostgreSQL
+2. fill in the sample data
+3. create table with pgvector for vector search purpose
+
+how does it work?
+1. check the intent
+    - upload unstructured documents into vector db?
+    - retrieve data from sql db?
+    - retrieve data from vector db?
+
+In case of uploading an unstructured documents into vector db
+- decide what method will be used
+    - chunking, but with what. overlap or other methods?
+- use the method to input the data
+
+In case of retrieving data from sql db
+- using embedding vector, check for related tables
+    - add automated schema update step if needed
+        - by doing so, I can add vector similarity search for related table
+- once related table is found, create sql query
+- check for sql safety and runs it
+- return it and let agent ai generates a proper answer based on the provided data
+
+In case of data from vector db
+- clean up the user's request in a 1~2 sentence using llm
+- using that sentence, use embedding vector's similarity to retrieve up to 10~20 pieces of information
+- provide the user's request and the information from the vector. Let the agent ai generate the answer based on that
