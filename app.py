@@ -1,4 +1,4 @@
-temp = input("Enter your request: ")
+user_input = input("Enter your request: ")
 
 from ais import agent_calls
 # pre-processing
@@ -11,12 +11,12 @@ Check the user's request and decide what methods can be called. Methods allowed 
 4. None. Not calling any methods.
 You must answer in a number between 1 to 4.
 """
-response = o_model.invoke(preprocessing_prompt + temp)
+response = o_model.invoke(preprocessing_prompt + user_input)
 # print(response.content)
 if "1" in response.content:
-    print(agent_calls[0](temp))
+    print(agent_calls[0](user_input))
 elif "2" in response.content:
-    print(agent_calls[1](temp))
+    print(agent_calls[1](user_input))
 elif "3" in response.content:
     pdf_path = input("Enter the PDF file path to upload: ")
     print(agent_calls[2](pdf_path))
