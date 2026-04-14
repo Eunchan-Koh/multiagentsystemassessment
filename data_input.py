@@ -71,7 +71,7 @@ user_infos = [
     {"name": "Bob Brown", "email": "bob.brown@example.com", "age": 40},
 ]
 
-if __name__ == "__main__":
+def init_users():
     for user_info in user_infos:
         insert_user(
             name=user_info["name"],
